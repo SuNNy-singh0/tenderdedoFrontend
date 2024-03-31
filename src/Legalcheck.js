@@ -180,7 +180,9 @@ function Legalcheck() {
           </tr>
           <tr>
             <td>Work File</td>
-            <td><a href={data.filepath}>See File</a></td>
+            <td>
+    {data.filepath && <a href={data.filepath.substring(3)} target="_blank">see file</a>}
+  </td>
           </tr>
         </tbody>
         </table> 
@@ -221,9 +223,11 @@ function Legalcheck() {
                 <td>{e.phoneno}</td>
                 <td>{e.gstno}</td>
                 <td>{e.experience}</td>
-                <td>  <a href={`/api/files/${e.filepath}`} target="_blank" rel="noopener noreferrer">Open PDF</a></td>
+                <td>
+  {e.filepath && <a href={e.filepath.substring(3)} target="_blank">Download file</a>}
+</td>
               
-                <td><button onClick={()=>reject(e.contractorid,e.emailid,e.tenderid)}>Close File</button></td>
+                <td><button onClick={()=>reject(e.contractorid,e.emailid,e.tenderid)}>createbackup</button></td>
               </tr>
             ))}
           </tbody>

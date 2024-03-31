@@ -6,8 +6,8 @@ import Contractor from './Contractor';
 import ReactModal from 'react-modal';
 import Modal from 'react-modal'
 import Modal2 from 'react-modal'
-import Slider from './Slider';
 import Footer from './Footer';
+import Review from './Review';
 function Mainpage() {
     const [content, setcontent] = useState({
         name: "",
@@ -128,7 +128,7 @@ function Mainpage() {
                 style={{
                     content: {
                         width: '40%',
-                        height: '50%',
+                        height: '70%',
                         margin: 'auto',
                         display: 'flex',
                         justifyContent: 'center',
@@ -139,6 +139,7 @@ function Mainpage() {
             >
                 <section className='loginuser'>
                     <h1>Registration for User/Contractor</h1>
+                    <button onClick={closeModer2} className='reg'>X</button>
                     <form className='selection' onSubmit={(e) => submitContent(e)} >
                         <label>Enter the name</label>
                         <input type='text' name='name'  value={content.name} onChange={(e) => handlechange(e)}></input>
@@ -161,7 +162,7 @@ function Mainpage() {
                         <br></br>
                         <button type='submit' className='btn2'>Submit</button>
                     </form>
-                    <button onClick={closeModer2} className='close btn3'>X</button>
+                    
                 </section>
             </Modal2>
 
@@ -170,8 +171,8 @@ function Mainpage() {
                 contentLabel="User Registration Modal"
                 style={{
                     content: {
-                        width: '30%',
-                        height: '50%',
+                        width: '44%',
+                        height: '70%',
                         margin: 'auto',
                         display: 'flex',
                         justifyContent: 'center',
@@ -183,18 +184,24 @@ function Mainpage() {
                 <section className='loginuser'>
                     <h1>Login For User</h1>
                     <form className='login' onSubmit={(e) => submitContent2(e)}>
-                        <label>name</label>
+                        
+                        <label>Name:</label>
+                        
+                        
                         <input type='text' name='name' value={login.name} onChange={(e) => handlechange2(e)}></input>
                         <br></br>
-                        <label>password</label>
+                        
+                        <label>Password:</label>
+                       
 
                         <input type='password' name='password' value={login.password} onChange={(e) => handlechange2(e)}></input>
                         <br></br>
                         <button type='submit' className='btn2'> login</button>
                         <p>Or</p>
                         <button className='signup' onClick={signup1}>Signup</button>
+                        
                     </form>
-                    <button onClick={clostReactModal} className='close'>X</button>
+                    <button onClick={clostReactModal} className='btn3 close'>X</button>
                 </section>
             </ReactModal>
 
@@ -204,8 +211,8 @@ function Mainpage() {
                 contentLabel="Contractor Login Modal"
                 style={{
                     content: {
-                        width: '30%',
-                        height: '50%',
+                        width: '40%',
+                        height: '85%',
                         margin: 'auto',
                         display: 'flex',
                         justifyContent: 'center',
@@ -216,19 +223,22 @@ function Mainpage() {
             >
                 <section className='loginuser'>
                     <h1>Login form for Contractor</h1>
+                    
                     <form className='login' onSubmit={submitContent3}>
-                        <label>name</label>
+                    <button className='reg' onClick={closeModer}>X</button>
+                        <label>Name</label>
                         <input type='text' name='name' value={login.name} onChange={(e)=>handlechange2(e)}></input>
                         <br></br>
-                        <label>password</label>
+                        <label>Password</label>
 
                         <input type='password' value={login.password} onChange={(e)=>handlechange2(e)} name='password'></input>
                         <br></br>
                         <button type='submit' className='btn2'> login</button>
                         <p>Or</p>
                         <button className='signup' onClick={signup2}>Signup</button>
+                        
                     </form>
-                    <button className='close' onClick={closeModer}>X</button>
+                    
                 </section>
             </Modal>
             <section className='phase'>
@@ -236,19 +246,19 @@ function Mainpage() {
                 <ul>
                     <li>
                         <img src='images/submit.png'></img>
-                        <p>Upload Your Work</p>
+                        <p>1.Upload Your Work</p>
                     </li>
                     <li>
                         <img src='images/done.png'></img>
-                        <p>Verify By Team & show on website</p>
+                        <p>2.Verify By Team & show on website</p>
                     </li>
                     <li>
                         <img src='images/recruitment.png'></img>
-                        <p>get Best Contractor</p>
+                        <p>3.Get Best Contractor</p>
                     </li>
                     <li>
                         <img src='./images/agreement.png'></img>
-                        <p>Legal Work</p>
+                        <p>4.Legal Work</p>
                     </li>
                 </ul>
             </section>
@@ -264,7 +274,7 @@ function Mainpage() {
                         With a focus on efficiency, transparency, and legal compliance, Tenderdedo ensures that every project is matched with the best-suited contractor,
                         supported by robust legal agreements. Say goodbye to the complexities of project procurement and hello to streamlined success with Tenderdedo."
                     </p>
-                    <button className='btn3' onClick={openModal}>Get Started</button>
+                    <button className='btn btn3' onClick={openModal}>Get Started</button>
                 </div>
             </section>
             <section className='facility'>
@@ -294,13 +304,13 @@ function Mainpage() {
                     <br></br>
                     <form onSubmit={Subcribe}>
                         <input type='email' placeholder='Enter your email' required></input>
-                        <button type='submit'> Subcribe</button>
+                        <button type='submit'> Subscribe</button>
                     </form>
                 </div>
             </section>
             <section >
                 <h1 className='hello'>What our client Say..?</h1>
-                <Slider/>
+                <Review/>
             </section>
             <section className='foots'>
                 <Footer/></section>

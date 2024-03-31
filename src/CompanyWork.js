@@ -185,79 +185,87 @@ function CompanyWork() {
       <Menubar />
        <Slider {...settings} className='slidebox'>
         
-        <section>
+        <section className='basic'>
           <h4 className='head'>Login for Tender verify</h4>
           <form onSubmit={submit} className='tender'>
             <label>Enter the name:</label>
+            <br></br>
             <input type='text' name='name' value={data.name} onChange={handlechange}></input>
             <br></br>
             <label>Enter the password:</label>
             <input type='password' name='password' value={data.password} onChange={handlechange}></input>
             <br></br>
-            <button type='submit' className='btn5'>Login</button>
+            <button type='submit' className='btn'>Login</button>
           </form>
         </section>
         <section>
-        <h4 className='head'>Login for Contractor proposal checker phase1</h4>
+        <h4 className='head'>Login for  phase1 checker</h4>
           <form onSubmit={submit2} className='tender'>
             <label>Enter the name</label>
+            <br></br>
             <input type='text' name='name' value={data2.name} onChange={handlechange2}></input>
             <br></br>
             <label>Enter the password</label>
             <input type='password' name='password' value={data2.password} onChange={handlechange2}></input>
             <br></br>
-            <button type='submit' className='btn5'>Login</button>
+            <button type='submit' className='btn'>Login</button>
           </form>
         </section>
       
       <section>
-      <h4 className='head'>Login for Contractor proposal checker phase2</h4>
+      <h4 className='head'>Login for  phase2 checker</h4>
         <form onSubmit={submit3} className='tender'>
           <label>Enter the name</label>
+          <br></br>
           <input type='text' name='name' value={data3.name} onChange={handlechange3}></input>
           <br></br>
           <label>Enter the password</label>
           <input type='password' name='password' value={data3.password} onChange={handlechange3}></input>
           <br></br>
-          <button type='submit' className='btn5'>Login</button>
+          <button type='submit' className='btn'>Login</button>
         </form>
       </section>
       
       <section>
-      <h4 className='head'>Login for Contractor proposal checker phase3</h4>
+      <h4 className='head'>Login for  phase3 checker </h4>
         <form onSubmit={submit4} className='tender'>
           <label>Enter the name</label>
+          <br></br>
           <input type='text' name='name' value={data4.name} onChange={handlechange4}></input>
           <br></br>
           <label>Enter the password</label>
           <input type='password' name='password' value={data4.password} onChange={handlechange4}></input>
           <br></br>
-          <button type='submit' className='btn5'>Login</button>
+          <button type='submit' className='btn'>Login</button>
         </form>
       </section>
      
       <section>
       <h4 className='head'>Login for legal Contractor checker</h4>
         <form onSubmit={submit5} className='tender'>
+        
           <label>Enter the name</label>
+          <br></br>
           <input type='text' name='name' value={data5.name} onChange={handlechange5}></input>
           <br></br>
           <label>Enter the password</label>
           <input type='password' name='password' value={data5.password} onChange={handlechange5}></input>
           <br></br>
-          <button type='submit' className='btn5'>Login</button>
+          <button type='submit' className='btn'>Login</button>
         </form>
       </section>
       <section>
           <h4 className='head'>Login for Admin Panel</h4>
           <form onSubmit={submit6} className='tender'>
+
             <label>Enter the name</label>
+            <br></br>
             <input type='text' name='name' value={data6.name} onChange={handlechange6}></input>
             <br></br>
             <label>Enter the password</label>
             <input type='password' name='password' value={data6.password} onChange={handlechange6}></input>
             <br></br>
-            <button type='submit' className='btn5'>Login</button>
+            <button type='submit' className='btn'>Login</button>
           </form>
         </section>
       </Slider>

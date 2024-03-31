@@ -38,3 +38,6 @@ code {
   margin-left: 10%;
   display: flex;
 }
+.slick-current{
+  width: 200px;
+}

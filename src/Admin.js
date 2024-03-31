@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import tenderapi from './service/tenderapi';
+import Menubar from './Menubar';
 function Admin() {
     const [data2,setdata2] = useState([])
     useEffect(() => {
@@ -29,6 +30,7 @@ function Admin() {
       }, []);
   return (
   <>
+  <Menubar/>
   <section>
     <h1 className='head'>
         Detail of user and contractor
@@ -50,8 +52,8 @@ function Admin() {
             {data2.map((e, num) => (
               <tr key={num}>
              <td>{num + 1}</td>
-             <td>{e.id}</td>
              <td>{e.name}</td>
+             <td>{e.password}</td>
                 <td>{e.emailid}</td>
                 <td>{e.phoneno}</td>
                 
@@ -93,8 +95,12 @@ function Admin() {
                 <td>{e.budget}</td>
                 <td>{e.contractorphoneno}</td>
                 <td>{e.contractorgst}</td>
-                <td><a href={e.userfile}> See File</a></td>
-                <td><a href={e.contractorfile}> See file</a></td>
+                <td>
+  {e.userfile && <a href={e.userfile.substring(3)} target="_blank">Download file</a>}
+</td>
+<td>
+  {e.contractorfile && <a href={e.contractorfile.substring(3)} target="_blank">Download file</a>}
+</td>
               </tr>
             ))}
           </tbody>

@@ -1,19 +1,23 @@
 .App {
   text-align: center;
 }
+
 .table {
   margin-top: 20px;
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 40px;
 }
-*{
+
+* {
   margin: 0px;
   padding: 0px;
   text-decoration: none;
   list-style: none;
 }
-.table th, .table td {
+
+.table th,
+.table td {
   margin-top: 20px;
   padding: 8px;
   border: 1px solid white;
@@ -48,223 +52,272 @@
 .button-container button:hover {
   background-color: #0056b3;
 }
-nav{
+
+nav {
   background-color: black;
   color: white;
-  height: 85px;
+  height: 60px;
 }
-nav li a{
+
+nav li a {
   font-family: sans-serif;
   color: white;
   font-size: 1.2rem;
   text-transform: uppercase;
- }
+}
+
 nav li {
   display: inline-block;
-  line-height: 80px;
+  line-height: 50px;
   margin: 2px 10px;
- 
+
 }
-nav li a:hover{
+
+nav li a:hover {
   color: gold;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
-.logo{
+
+.logo {
   color: #fff;
   font-size: 2rem;
   font-weight: 500;
   float: left;
   margin-left: 50px;
 }
-nav ul{
+
+nav ul {
   float: right;
   margin-right: 50px;
- 
+
 }
-.logoimg{
+
+.logoimg {
   float: left;
   width: 20%;
   height: 81%;
 }
-.intro{
+
+.intro {
   height: 350px;
-   background: url('/public/images/pexels-valentin-antonucci-860963.jpg'); 
+  background: url('/public/images/pexels-valentin-antonucci-860963.jpg');
   background-size: cover;
 }
-.intro p{
-  font-size: 3rem;
+
+.intro p {
+  font-size: 2.4rem;
   float: right;
   margin-right: 10%;
   margin-top: 20px;
 }
-.intro p span{
-  color: #007bff;
+
+.intro p span {
+  color: #3f9d3f;
   font-weight: 500;
 }
-.btn{
+
+.btn {
   padding: 10px 10px;
   text-align: center;
   font-size: 1.3rem;
   font-weight: 500;
   margin-right: 25px;
-  background-color: gray;
+  background-color: #030303;
   color: white;
   border-radius: 15%;
-  box-shadow: 2px 2px 2px black;
+  box-shadow: 7px 7px 14px #9c9993;
 
 }
-.loginuser h1{
-font-size: 2rem;
-color: #007bff;
+
+.loginuser h1 {
+  font-size: 1.8rem;
+  color: green;
+  font-family: sans-serif;
+  margin-bottom: 20px;
 }
-.loginuser label{
+
+.loginuser label {
   font-size: 1.4rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 500;
-  margin: 20px 5px;
+  margin: 30px 10px;
 }
-.loginuser p{
+.loginuser input{
+  margin-bottom: 20px;
+}
+.loginuser p {
   font-size: 2rem;
   color: black;
 }
-.signup{
-background-color: lightskyblue;
-color: white;
-font-weight: 600;
-padding: 10px 15px;
-border-radius: 10%;
-font-size: 1.5rem;
-cursor: pointer;
-}
-.loginuser input{
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1.3rem;
-  color: darkblue;
-  font-weight: 400;
-  margin-left: 5px;
-}
-#sel{
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1.3rem;
-  color: darkblue;
-  font-weight: 400;
-  margin-left: 5px;
-}
-.btn2{
+
+.signup {
+  background-color: green;
+  color: white;
+  font-weight: 600;
   padding: 10px 15px;
-  background: grey;
+  border-radius: 10%;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.loginuser input {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  color: darkblue;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+#sel {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  color: darkblue;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.btn2 {
+  padding: 10px 15px;
+  background: rgb(35, 183, 183);
   color: #fff;
   font-weight: 400;
   margin-top: 40px;
   font-size: 1.5rem;
   box-shadow: 2px 2px 2px black;
 }
-.close{
+
+.close {
   font-size: 1.5rem;
   color: white;
   cursor: pointer;
   float: right;
-  margin: -360px -42px -4px 5px;
+  margin: 10px 10px;
   padding: 16px 11px;
   background: red;
   border-radius: 50%;
   font-weight: 500;
+
 }
-.btn3{
-  margin: -400px -42px -4px 5px;
+.reg{
+  float: right;
+  margin-top: -51px;
+  padding: 9px 10px;
+  background-color: red;
+  border-radius: 16px;
+  margin-right: -16px;
+  color: white;
+  cursor: pointer;
 }
-.phase ul li{
+.btn3 {
+  margin-right: -57px;
+  margin-top: -418px;
+  
+}
+
+.phase ul li {
   display: inline-block;
 }
-.phase ul li img{
+
+.phase ul li img {
   width: 25%;
   border: 2px solid black;
   padding: 20px 20px;
   background-color: rgb(224, 219, 219);
   border-radius: 33%;
 }
-.phase ul li p{
-  color: #007bff;
+
+.phase ul li p {
+  color: #3f9d3f;
   font-size: 1.3rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 500;
+  font-family: sans-serif;
+  font-weight: 700;
 }
-.phase{
+
+.phase {
   margin-top: 20px;
 }
-.phase h1{
-  color: #007bff;
+
+.phase h1 {
+  color: #1b46a0;
   font-size: 2rem;
 }
-.phase ul{
-margin-top: 3%;
-display: flex;
+
+.phase ul {
+  margin-top: 3%;
+  display: flex;
 }
-.introduction{
+
+.introduction {
   margin-top: 50px;
   display: flex;
-  background-color: #f3e7e9;
+  background-color: #d2cccd;
   margin-bottom: 40px;
 }
-.left{
+
+.left {
   flex-basis: 40%;
   padding: 20px 10px;
 
 }
-.left img{
+
+.left img {
   width: 40vw;
   border: 2px solid black;
   box-shadow: 5px 6px 5px 5px grey;
-}  
-.Right{
-  color: darkblue;
-  font-family: sans-serif;
-  line-height: 50px;
-  font-weight: 500;
 }
-.Right p{
-  font-size: 1.5rem;
+
+.Right {
+  color: black;
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 40px;
+  
 }
-.btn3{
-  padding: 10px 20px;
-  background-color: white;
-  color: #007bff;
-  font-size: 1.5rem;
-  font-weight: 500;
-   border-radius: 15%;
-   cursor: pointer;
+
+.Right p {
+  font-size: 16px;
 }
-.facility h1{
+
+.btn3 {
+  margin-right: -53px;
+  margin-top: -422px;
+}
+
+.facility h1 {
   font-size: 2rem;
-  color:#007bff;
+  color: darkblue;
 }
-.container{
+
+.container {
   margin-top: 50px;
   padding: 50px 10px;
   display: flex;
   background-color: #e7e4e4;
   margin-bottom: 50px;
 }
-.card img{
+
+.card img {
   width: 30%;
 }
-.card{
+
+.card {
   padding: 10px 0px;
   background-color: white;
   margin-right: 25px;
   border-radius: 10%;
-  box-shadow: 2px 2px 2px 2px black;
+  box-shadow: 2px 2px 2px 2px lightslategray;
 }
-.card p{
+
+.card p {
   font-size: 1.5rem;
   font-family: serif;
   color: grey;
   font-weight: 600;
 }
-.fourth{
-  height: 40vh;
+
+.fourth {
+  height: 68vh;
   background-image: url('/public/images/1684305492_Interior_Designers_in_Rajouri_Garden.jpg');
   background-position-y: 10%;
   display: flex;
@@ -274,18 +327,21 @@ display: flex;
   margin-bottom: 10px;
   opacity: 0.6;
 }
-.noti h1{
+
+.noti h1 {
   font-size: 1.8rem;
   color: blue;
 }
-.noti input{
+
+.noti input {
   padding: 20px 50px;
   border: 2px solid black;
   font-size: 1.3rem;
   color: #0056b3;
   border-radius: 5%;
 }
-.noti button{
+
+.noti button {
   padding: 10px 15px;
   background-color: red;
   color: #fff;
@@ -295,33 +351,39 @@ display: flex;
   border-radius: 10%;
   box-shadow: 2px 2px 2px 2px grey;
 }
-.slide-container{
+
+.slide-container {
   max-width: 1120px;
   width: 100%;
   padding: 40px 0;
 }
-.slide-content{
+
+.slide-content {
   margin: 0 40px;
   overflow: hidden;
   border-radius: 25px;
 }
-.card{
+
+.card {
   border-radius: 25px;
   background-color: #FFF;
 }
+
 .image-content,
-.card-content{
+.card-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px 14px;
 }
-.image-content{
+
+.image-content {
   position: relative;
   row-gap: 5px;
   padding: 25px 0;
 }
-.overlay{
+
+.overlay {
   position: absolute;
   left: 0;
   top: 0;
@@ -330,8 +392,9 @@ display: flex;
   background-color: #6c6161;
   border-radius: 25px 25px 0 25px;
 }
+
 .overlay::before,
-.overlay::after{
+.overlay::after {
   content: '';
   position: absolute;
   right: 0;
@@ -340,11 +403,13 @@ display: flex;
   width: 40px;
   background-color: #4070F4;
 }
-.overlay::after{
+
+.overlay::after {
   border-radius: 0 25px 0 0;
   background-color: #FFF;
 }
-.card-image{
+
+.card-image {
   position: relative;
   height: 150px;
   width: 150px;
@@ -352,23 +417,27 @@ display: flex;
   background: #FFF;
   padding: 3px;
 }
-.card-image .card-img{
+
+.card-image .card-img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: 50%;
 }
-.name{
+
+.name {
   font-size: 18px;
   font-weight: 500;
   color: #333;
 }
-.description{
+
+.description {
   font-size: 14px;
   color: #707070;
   text-align: center;
 }
-.button{
+
+.button {
   border: none;
   font-size: 16px;
   color: #FFF;
@@ -379,104 +448,129 @@ display: flex;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.button:hover{
+.swiper-slide{
+  margin-left: 20px;
+}
+.button:hover {
   background: #265DF2;
 }
 
-.swiper-navBtn{
+.swiper-navBtn {
   color: #6E93f7;
   transition: color 0.3s ease;
 }
-.swiper-navBtn:hover{
+
+.swiper-navBtn:hover {
   color: #4070F4;
 }
+
 .swiper-navBtn::before,
-.swiper-navBtn::after{
+.swiper-navBtn::after {
   font-size: 35px;
 }
-.swiper-button-next{
+
+.swiper-button-next {
   right: 0;
 }
-.swiper-button-prev{
+
+.swiper-button-prev {
   left: 0;
 }
-.swiper-pagination-bullet{
+
+.swiper-pagination-bullet {
   background-color: #6E93f7;
   opacity: 1;
 }
-.swiper-pagination-bullet-active{
+
+.swiper-pagination-bullet-active {
   background-color: #4070F4;
 }
 
 @media screen and (max-width: 768px) {
-  .slide-content{
+  .slide-content {
     margin: 0 10px;
   }
-  .swiper-navBtn{
+
+  .swiper-navBtn {
     display: none;
   }
 }
-.hello{
+
+.hello {
   font-size: 1.8rem;
-  color:#007bff;
+  color: darkblue;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 30px 0px;
 }
-.foot{
+
+.foot {
   display: flex;
   margin-top: 50px;
   background-color: black;
   height: 30vh;
 }
-.logo{
+
+.logo {
   flex-basis: 20%;
 }
-.logo img{
+
+.logo img {
   float: left;
   width: 65%;
   height: 50%;
 }
-.contact{
+
+.contact {
   flex-basis: 30%;
   color: white;
   margin-top: 35px;
   line-height: 30px;
 }
-.condition{
+
+.condition {
   flex-basis: 25%;
   margin-top: 30px;
   line-height: 30px;
 }
-.condition ul li a{
+
+.condition ul li a {
   font-size: 1.3rem;
   color: white;
 }
-.copyright{
+
+.copyright {
   background-color: gray;
   color: white;
   font-size: 1.3rem;
   font-weight: 500;
 }
-.socialicon{
-  width: 10%;
+
+.socialicon {
+  width: 8%;
 }
-.socialmedia ul li{
-margin-top: 7px;
+
+.socialmedia ul li {
+  margin-top: 7px;
 }
+
 .formwork {
   border: 2px solid black;
-  margin: 10px 480px;
-  box-shadow: 2px 2px 2px 2px lightblue;
+  margin: 10px 414px;
+  box-shadow: 2px 2px 2px 2px gray;
 
 }
-.formwork h1{
+#file{
+  width: 24vw;
+}
+.formwork h1 {
   font-size: 1.8rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #007bff;
+  color: green;
   margin: 10px 0px;
 }
-.tender label{
- 
+
+.tender label {
+
   font-size: 1.5rem;
   color: darkblue;
   margin-right: 20px;
@@ -484,16 +578,19 @@ margin-top: 7px;
   font-weight: 500;
   line-height: 50px;
 }
-.tender input,textarea{
- 
+
+.tender input,
+textarea {
+
   padding: 10px 20px;
   font-size: 1.5rem;
-  color:black;
+  color: black;
   font-weight: 400;
   margin: 15px 0px;
   box-shadow: 2px 2px 2px 2px lightblue;
 }
-.btn5{
+
+.btn5 {
   padding: 10px 20px;
   font-size: 1.4rem;
   background-color: #51c939;
@@ -502,16 +599,24 @@ margin-top: 7px;
   border-radius: 10%;
   cursor: pointer;
 }
-.slidebox{
+
+.slidebox {
   margin-top: 50px;
   height: 60vh;
   width: 50%;
   margin-left: 28%;
   padding: 40px 10px;
 }
-.head{
+
+.head {
   font-size: 1.7rem;
-  color: #007bff;
+  color: green;
+}
+
+.tex{
+  color: black;
+  font-size: 1.5rem;
+
 }
 /* #next{
   background-color: #007bff;
@@ -529,7 +634,7 @@ margin-top: 7px;
   border-radius: 15%;
   margin-left: 15px;
 } */
-.tenderbox{
+.tenderbox {
   background-color: #ebf4f5;
   background-size: cover;
   background-position-x: 20%;
@@ -548,15 +653,54 @@ margin-top: 7px;
   box-shadow: 2px 2px 2px 2px gainsboro;
   margin-bottom: 50px;
 }
-.btn6{
+
+.btn6 {
   margin-left: 20px;
 }
-.copyright2{
+
+.copyright2 {
   background-color: black;
   color: white;
   font-size: 1.3rem;
   font-weight: 500;
 }
 
+.box {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+  margin-left: 20px;
+}
 
+.box img {
+  width: 70%;
+  border-radius: 60%;
+  margin-left: 2vw;
+  border: 3px solid white;
+}
 
+.imgbox {
+
+  padding: 25px 40px;
+  background-color: grey;
+  border-radius: 15%;
+}
+
+.slidebox2 {
+  margin-top: 50px;
+  height: 60vh;
+  width: 77%;
+  margin-left: 12%;
+  padding: 23px 1px;
+
+}
+
+.box h1 {
+  color: #007bff;
+}
+
+.box p {
+  font-family: sans-serif;
+  font-size: 1.2rem;
+}

@@ -61,11 +61,11 @@ function Tenderform() {
           <input type='text' name='projectamount' required value = {data.projectamount} onChange={inputchange}></input>
           <br></br>
           <label>Enter  duration :</label>
-          <input type='text' name='duration' required value={data.duration} onChange={inputchange}></input>
+          <input type='text' name='duration' required value={data.duration} onChange={inputchange} placeholder='Add in year form'></input>
           <br>
           </br>
           <label>Enter  description :</label>
-          <textarea value={data.description} required name='description' onChange={inputchange}></textarea>
+          <textarea value={data.description} required name='description' onChange={inputchange} placeholder='Add Description Clearly and in detail manner'></textarea>
           <br></br>
           <label>Enter  phoneno :</label>
           <input type='number' value={data.phoneno} required name='phoneno' onChange={inputchange}></input>
@@ -74,7 +74,7 @@ function Tenderform() {
           <input type='text' value={data.location} required name='location' onChange={inputchange}></input>
           <br></br>
           <label>Upload project Requirement file : </label>
-          <input type='file' onChange={handlefile} required></input>
+          <input type='file' id='file' onChange={handlefile} required ></input>
           <br></br>
           <button type='submit' className='btn5'>Submit</button>
         </form>

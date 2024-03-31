@@ -3,64 +3,64 @@ import tenderapi from './service/tenderapi';
 import Menubar from './Menubar';
 
 function Check3() {
-  const [id,setid] = useState('');
+  const [id, setid] = useState('');
   const [data, setdata] = useState({})
-  const [data2,setdata2] = useState([])
-  const handlechange =(e)=>{
-    const {value}=e.target;
+  const [data2, setdata2] = useState([])
+  const handlechange = (e) => {
+    const { value } = e.target;
     setid(value);
   };
-  const [id2,setid2] = useState('');
-  const handlechange2 =(e)=>{
-    const {value}=e.target;
+  const [id2, setid2] = useState('');
+  const handlechange2 = (e) => {
+    const { value } = e.target;
     setid2(value);
   };
-  const submit = async (e)=>{
+  const submit = async (e) => {
     e.preventDefault();
     if (id) {
-        try {
-          const res = await tenderapi.getTenderbyid(id);
-          setdata(res.data);
-        } catch (error) {
-          console.log(error);
-        }
+      try {
+        const res = await tenderapi.getTenderbyid(id);
+        setdata(res.data);
+      } catch (error) {
+        console.log(error);
       }
     }
-    useEffect((id) => {
-      async function fetchData(id) {
-        try {
-          const res = await tenderapi.getTenderbyid(id);
-          setdata(res.data);
-        } catch (error) {
-          console.log(error);
-        }
-      }
-      if (id) {
-          fetchData();
-        }
-    }, [id]);
-    useEffect(() => {
-      async function fetchData() {
-        try {
-          const res = await tenderapi.getphase3();
-          setdata2(res.data);
-        } catch (error) {
-          console.log(error);
-        }
-      }
-      fetchData();
-    }, []);
-    const Forward = async (id, contractorId, Emailid) => {
+  }
+  useEffect((id) => {
+    async function fetchData(id) {
       try {
-          const selectedTender = data2.find((tender) => tender.tenderid === id && tender.contractorid == contractorId);
-          if (!selectedTender) {
-            console.error('Selected tender not found:', id);
-            return;
-          }
-          const { tenderid, contractorid, name, emailid, phoneno, gstno, filepath, experience } = selectedTender;
-          const requestBody = { tenderid, contractorid, name, emailid, phoneno, gstno, filepath, experience };
-          await tenderapi.createlegal(requestBody);
-          const body = `We are pleased to inform you that your proposal for the recently applied tender has been selected by Tenderdedo Firm. Congratulations on this significant achievement!
+        const res = await tenderapi.getTenderbyid(id);
+        setdata(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    if (id) {
+      fetchData();
+    }
+  }, [id]);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await tenderapi.getphase3();
+        setdata2(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData();
+  }, []);
+  const Forward = async (id, contractorId, Emailid) => {
+    try {
+      const selectedTender = data2.find((tender) => tender.tenderid === id && tender.contractorid == contractorId);
+      if (!selectedTender) {
+        console.error('Selected tender not found:', id);
+        return;
+      }
+      const { tenderid, contractorid, name, emailid, phoneno, gstno, filepath, experience } = selectedTender;
+      const requestBody = { tenderid, contractorid, name, emailid, phoneno, gstno, filepath, experience };
+      await tenderapi.createlegal(requestBody);
+      const body = `We are pleased to inform you that your proposal for the recently applied tender has been selected by Tenderdedo Firm. Congratulations on this significant achievement!
 
           Your proposal stood out among the submissions we received, demonstrating your expertise, commitment, and understanding of the project requirements. We are confident that your capabilities will contribute greatly to the success of the project.
           
@@ -71,29 +71,29 @@ function Check3() {
           Once again, congratulations on your successful proposal. We anticipate a fruitful collaboration ahead.
           
           Best regards,`
-          tenderapi.send(Emailid,body);
-          alert("Your tender forwarded successfully");
-        } catch (error) {
-          alert("An error occurred while forwarding the tender. Please check the console for details.");
-        }
-    };
-    const submit2 = async (e)=>{
-      e.preventDefault();
-      if (id2) {
-          try {
-            const res = await tenderapi.getphase3byid(id2);
-            setdata2(res.data);
-          } catch (error) {
-            console.log(error);
-          }
-        }
+      tenderapi.send(Emailid, body);
+      alert("Your tender forwarded successfully");
+    } catch (error) {
+      alert("An error occurred while forwarding the tender. Please check the console for details.");
+    }
+  };
+  const submit2 = async (e) => {
+    e.preventDefault();
+    if (id2) {
+      try {
+        const res = await tenderapi.getphase3byid(id2);
+        setdata2(res.data);
+      } catch (error) {
+        console.log(error);
       }
-      const reject = async (tenderId,email)=>{
-        try{
-          const response = await tenderapi.deletephase3(tenderId);
-          alert("deleted SucessFully");
-          const updatedContractors = await tenderapi.getphase3();
-          const body = `I hope this email finds you well.
+    }
+  }
+  const reject = async (tenderId, email) => {
+    try {
+      const response = await tenderapi.deletephase3(tenderId);
+      alert("deleted SucessFully");
+      const updatedContractors = await tenderapi.getphase3();
+      const body = `I hope this email finds you well.
 
           I regret to inform you that after careful evaluation, your proposal has not advanced past the technical round following the successful completion of the initial round in our selection process.
           
@@ -102,24 +102,24 @@ function Check3() {
           We understand that this news may be disappointing, and we sincerely appreciate the effort and time you dedicated to preparing and submitting your proposal. Your interest in collaborating with us is valued, and we encourage you to continue exploring future opportunities with Tenderdekho.
           
           If you would like further feedback or clarification on the evaluation of your proposal, please do not hesitate to reach out to us. We are more than willing to provide detailed insights to assist you in enhancing future submissions.`
-          tenderapi.send(email,body)
-          // Update state with the new list of contractors
-          setdata2(updatedContractors.data);
-         }
-        catch(error){
-          alert(error);
-        }
-      }
+      tenderapi.send(email, body)
+      // Update state with the new list of contractors
+      setdata2(updatedContractors.data);
+    }
+    catch (error) {
+      alert(error);
+    }
+  }
   return (
     <>
-    <Menubar></Menubar>
-    <h1 className='head'>proposal check work bench phase 3: Selection Round</h1>
-    <form onSubmit={submit} className='tender'>
+      <Menubar></Menubar>
+      <h1 className='head'>proposal check work bench phase 3: Selection Round</h1>
+      <form onSubmit={submit} className='tender'>
         <label>enter Tender Id:</label>
         <input type='number' onChange={handlechange} value={id}></input>
         <button type='submit' className='btn5 btn6' >getTender</button>
-    </form>
-    {/* <section>
+      </form>
+      {/* <section>
     <table className='table'>
           <thead>
             <tr>
@@ -149,60 +149,62 @@ function Check3() {
 
         </table>
     </section> */}
-    <section className='tenderbox'>
-    <table className='table'>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Columm</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Tenderid</td>
-            <td>{data.id}</td>
-          </tr>
-          <tr>
-            <td>Name</td>
-            <td>{data.name}</td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>{data.description}</td>
-          </tr>
-          <tr>
-            <td>ProjectAmount</td>
-            <td>{data.projectamount}</td>
-          </tr>
-          <tr>
-            <td>Duration</td>
-            <td>{data.duration}year</td>
-          </tr>
-          <tr>
-            <td>Project Location</td>
-            <td>{data.location}</td>
-          </tr>
-          <tr>
-            <td>Work File</td>
-            <td><a href={data.filepath}>See File</a></td>
-          </tr>
-        </tbody>
-        </table> 
-    </section>
- 
-    <section>
-    <form onSubmit={submit2} className='tender'>
-        <label>enter id</label>
-        <input type='number' onChange={handlechange2} value={id2}></input>
-        <button className='btn5 btn6'>Sort it</button>
-    </form>
-    </section>
-    <section>
+      <section className='tenderbox'>
+        <table className='table'>
+          <thead>
+            <tr>
+              <th>Attribute</th>
+              <th>Columm</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tenderid</td>
+              <td>{data.id}</td>
+            </tr>
+            <tr>
+              <td>Name</td>
+              <td>{data.name}</td>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td>{data.description}</td>
+            </tr>
+            <tr>
+              <td>ProjectAmount</td>
+              <td>{data.projectamount}</td>
+            </tr>
+            <tr>
+              <td>Duration</td>
+              <td>{data.duration}year</td>
+            </tr>
+            <tr>
+              <td>Project Location</td>
+              <td>{data.location}</td>
+            </tr>
+            <tr>
+              <td>Work File</td>
+              <td>
+    {data.filepath && <a href={data.filepath.substring(3)} target="_blank">see file</a>}
+  </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <form onSubmit={submit2} className='tender'>
+          <label>enter id</label>
+          <input type='number' onChange={handlechange2} value={id2}></input>
+          <button className='btn5 btn6'>Sort it</button>
+        </form>
+      </section>
+      <section>
         <h2 className='head'>Contractor Selection list</h2>
         <table className='table'>
-        <thead>
+          <thead>
             <tr>
-            <th>S.no</th>
+              <th>S.no</th>
               <th>Tender id</th>
               <th>Contractor id</th>
               <th>name</th>
@@ -218,7 +220,7 @@ function Check3() {
           <tbody>
             {data2.map((e, num) => (
               <tr key={num}>
-                <td>{num+1}</td>
+                <td>{num + 1}</td>
                 <td>{e.tenderid}</td>
                 <td>{e.contractorid}</td>
                 <td>{e.name}</td>
@@ -226,19 +228,25 @@ function Check3() {
                 <td>{e.phoneno}</td>
                 <td>{e.gstno}</td>
                 <td>{e.experience}</td>
-                <td>  <a href={`/api/files/${e.filepath}`} target="_blank" rel="noopener noreferrer">Open PDF</a></td>
-                <td><button onClick={() =>Forward(e.tenderid,e.contractorid,e.emailid)}>Forward</button></td>
-                <td><button onClick={()=>reject(e.contractorid,e.emailid)}>Reject</button></td>
+                <td>
+                  {e.filepath && (
+                    <a href={e.filepath.substring(3)} target="_blank">
+                      See File
+                    </a>
+                  )}
+                </td>
+                <td><button onClick={() => Forward(e.tenderid, e.contractorid, e.emailid)}>Forward</button></td>
+                <td><button onClick={() => reject(e.contractorid, e.emailid)}>Reject</button></td>
               </tr>
             ))}
           </tbody>
-          </table>
-    </section>
-    <section>
-    <div className='copyright2'>
-     All right reserved to tender dedo
-    </div>
-    </section>
+        </table>
+      </section>
+      <section>
+        <div className='copyright2'>
+          All right reserved to tender dedo
+        </div>
+      </section>
     </>
   )
 }

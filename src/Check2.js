@@ -20,6 +20,7 @@ function Check2() {
       try {
         const res = await tenderapi.getTenderbyid(id);
         setdata(res.data);
+        console.log(data.filepath);
       } catch (error) {
         console.log(error);
       }
@@ -155,7 +156,9 @@ function Check2() {
             </tr>
             <tr>
               <td>Work File</td>
-              <td><a href={data.filepath}>See File</a></td>
+              <td>
+    {data.filepath && <a href={data.filepath.substring(3)} target="_blank">see file</a>}
+  </td>
             </tr>
           </tbody>
         </table>
@@ -196,7 +199,9 @@ function Check2() {
                 <td>{e.phoneno}</td>
                 <td>{e.gstno}</td>
                 <td>{e.experience}</td>
-                <td>  <a href={`/api/files/${e.filepath}`} target="_blank" rel="noopener noreferrer">Open PDF</a></td>
+                <td>
+  {e.filepath && <a href={e.filepath.substring(3)} target="_blank">Download file</a>}
+</td>
                 <td><button onClick={() => Forward(e.tenderid, e.contractorid, e.emailid)}>Forward</button></td>
                 <td><button onClick={() => reject(e.contractorid, e.emailid)}>Reject</button></td>
               </tr>

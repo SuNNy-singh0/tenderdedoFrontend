@@ -196,7 +196,9 @@ function Check1() {
             </tr>
             <tr>
               <td>Work File</td>
-               <td><a href={data.filepath.substring(3)} target="_blank">see file</a></td> 
+              <td>
+                {data.filepath && <a href={data.filepath.substring(3)} target="_blank">see file</a>}
+              </td>
             </tr>
           </tbody>
         </table>
@@ -239,8 +241,14 @@ function Check1() {
                 <td>{e.phoneno}</td>
                 <td>{e.gstno}</td>
                 <td>{e.experience}</td>
-               <td ><a href={e.filepath.substring(3)} target="_blank">Download file</a></td>
-            
+                <td>
+                  {e.filepath && (
+                    <a href={e.filepath.substring(3)} target="_blank">
+                      See File
+                    </a>
+                  )}
+                </td>
+
                 <td><button onClick={() => Forward(e.tenderid, e.contractorid, e.emailid)}>Forward</button></td>
                 <td><button onClick={() => reject(e.contractorid, e.emailid)}>Reject</button></td>
               </tr>

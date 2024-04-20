@@ -185,7 +185,7 @@ function Check3() {
             <tr>
               <td>Work File</td>
               <td>
-    {data.filepath && <a href={data.filepath.substring(3)} target="_blank">see file</a>}
+    {data.filepath && <a href={data.filepath.substring(65)} target="_blank">see file</a>}
   </td>
             </tr>
           </tbody>
@@ -230,7 +230,7 @@ function Check3() {
                 <td>{e.experience}</td>
                 <td>
                   {e.filepath && (
-                    <a href={e.filepath.substring(3)} target="_blank">
+                    <a href={e.filepath.substring(65)} target="_blank">
                       See File
                     </a>
                   )}

@@ -66,7 +66,7 @@ function Contractorfrom() {
         <input type='text' name='experience' value={contract.experience} onChange={inputchange}></input>
         <br></br>
         <label>Upload Proposal File:</label>
-        <input type='file' onChange={handlefile}></input>
+        <input type='file'  id='file' onChange={handlefile}></input>
         <br></br>
         <button type='Submit' className='btn5'>Submit</button>
     </form>

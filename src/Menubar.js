@@ -18,11 +18,11 @@ function Menubar() {
 <section id="header">
         
             <nav>
-            <img src='./images/Annotation_2024-02-09_170909-removebg-preview.png' className='logoimg'></img>
+            <img src='./images/logo4.png' className='logoimg'></img>
            
                 <ul id="navbar">
                  
-                <li><NavLink exact to='/'>Home</NavLink></li>
+                <li><NavLink  to='/'>Home</NavLink></li>
             <li><NavLink to='/tender'>Tender</NavLink></li>
             {/* <li><NavLink to='/company'>Company Login</NavLink></li> */}
             <li><a href='#' onClick={handleCompanyLogin}>Company Login</a></li>

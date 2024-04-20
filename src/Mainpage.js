@@ -14,13 +14,13 @@ function Mainpage() {
         password: "",
         emailid: "",
         phoneno: "",
-        type:"user"
+        type: "user"
     });
     const [loged, setloged] = useState(false);
     const [loged2, setloged2] = useState(false);
     const [login, setlogin] = useState({
-        name:"",
-        password:""
+        name: "",
+        password: ""
     });
     const [modelopen, setmodelopen] = useState(false);
     const [model, setmodel] = useState(false);
@@ -43,14 +43,14 @@ function Mainpage() {
     }
     const submitContent2 = (e) => {
         e.preventDefault();
-        console.log(login.name +"" +login.password)
-        tenderapi.checkName(login.name,login.password)
+        console.log(login.name + "" + login.password)
+        tenderapi.checkName(login.name, login.password)
             .then((res) => {
                 if (res.data === "found Sucessfully") {
                     setloged(true);
                 }
                 else {
-                    console.log(login.name +"" +login.password)
+                    console.log(login.name + "" + login.password)
                     alert("wrong password and name")
                 }
             })
@@ -60,7 +60,7 @@ function Mainpage() {
     }
     const submitContent3 = (e) => {
         e.preventDefault();
-        tenderapi.checkName(login.name,login.password)
+        tenderapi.checkName(login.name, login.password)
             .then((res) => {
                 if (res.data === "found Sucessfully") {
                     setloged2(true);
@@ -109,12 +109,12 @@ function Mainpage() {
         e.preventDefault();
         alert("Subcribed SucessFully")
     }
-    
+
     return (
         <>
             <Menubar />
             <section className='intro'>
-                <p>Welcome to <br></br><span>TenderDedo</span>
+                <p>Welcome to <br></br><span>Tender Dekho</span>
                     <br></br>
                     <button className='btn' onClick={openReactModal}>User</button>
                     <button className='btn' onClick={openModal}>Contractor</button>
@@ -131,7 +131,7 @@ function Mainpage() {
                         height: '70%',
                         margin: 'auto',
                         display: 'flex',
-                        justifyContent: 'center',
+                        justifyContent: 'left',
                         textAlign: 'center',
                         border: '2px solid black'// Optional: Align items vertically
                     }
@@ -139,30 +139,30 @@ function Mainpage() {
             >
                 <section className='loginuser'>
                     <h1>Registration for User/Contractor</h1>
-                    <button onClick={closeModer2} className='reg'>X</button>
+                    
                     <form className='selection' onSubmit={(e) => submitContent(e)} >
-                        <label>Enter the name</label>
-                        <input type='text' name='name'  value={content.name} onChange={(e) => handlechange(e)}></input>
+                        
+                        <input type='text' name='name'  placeholder="Enter  Name" value={content.name} onChange={(e) => handlechange(e)}></input>
                         <br></br>
-                        <label>Enter the password</label>
-                        <input type='password' name='password' value={content.password} onChange={(e) => handlechange(e)}></input>
+                        
+                        <input type='password' name='password' placeholder='Create Password' value={content.password} onChange={(e) => handlechange(e)}></input>
                         <br></br>
-                        <label>Enter the emailid</label>
-                        <input type='text' name='emailid' value={content.emailid} onChange={(e) => handlechange(e)}></input>
+                        
+                        <input type='text' name='emailid' placeholder='Enter Email-id' value={content.emailid} onChange={(e) => handlechange(e)}></input>
                         <br></br>
-                        <label>Enter the phoneno</label>
-                        <input type='text' name='phoneno'  value={content.phoneno} onChange={(e) => handlechange(e)}></input>
+                        
+                        <input type='text' name='phoneno' placeholder='Enter Phone-No' value={content.phoneno} onChange={(e) => handlechange(e)}></input>
                         <br>
                         </br>
                         <label>Type:</label>
-                        <select id='sel'  name="type" value={content.type} onChange={(e)=>handlechange(e)}>
-                            <option value="user">User</option>
+                        <select id='sel' name="type" value={content.type} onChange={(e) => handlechange(e)}>
+                            <option value="user" selected>User</option>
                             <option value="contractor">Contractor</option>
                         </select>
                         <br></br>
                         <button type='submit' className='btn2'>Submit</button>
                     </form>
-                    
+                    <button onClick={closeModer2} className='btn7 close'></button>
                 </section>
             </Modal2>
 
@@ -184,24 +184,23 @@ function Mainpage() {
                 <section className='loginuser'>
                     <h1>Login For User</h1>
                     <form className='login' onSubmit={(e) => submitContent2(e)}>
-                        
-                        <label>Name:</label>
-                        
-                        
-                        <input type='text' name='name' value={login.name} onChange={(e) => handlechange2(e)}></input>
-                        <br></br>
-                        
-                        <label>Password:</label>
-                       
 
-                        <input type='password' name='password' value={login.password} onChange={(e) => handlechange2(e)}></input>
+
+
+                        <input type='text' name='name' value={login.name} placeholder="Username" onChange={(e) => handlechange2(e)}></input>
                         <br></br>
-                        <button type='submit' className='btn2'> login</button>
-                        <p>Or</p>
-                        <button className='signup' onClick={signup1}>Signup</button>
-                        
+                        {/*                         
+                        <label>Password:</label> */}
+
+
+                        <input type='password' name='password' value={login.password} placeholder='password' onChange={(e) => handlechange2(e)}></input>
+                        <br></br>
+                        <button type='submit' className='btn2'>Sign-in</button>
+                        <p>or</p>
+                        <button className='btn2' onClick={signup1}>Signup</button>
+
                     </form>
-                    <button onClick={clostReactModal} className='btn3 close'>X</button>
+                    <button onClick={clostReactModal} className='btn3 close'></button>
                 </section>
             </ReactModal>
 
@@ -212,7 +211,7 @@ function Mainpage() {
                 style={{
                     content: {
                         width: '40%',
-                        height: '85%',
+                        height: '70%',
                         margin: 'auto',
                         display: 'flex',
                         justifyContent: 'center',
@@ -223,34 +222,34 @@ function Mainpage() {
             >
                 <section className='loginuser'>
                     <h1>Login form for Contractor</h1>
-                    
-                    <form className='login' onSubmit={submitContent3}>
-                    <button className='reg' onClick={closeModer}>X</button>
-                        <label>Name</label>
-                        <input type='text' name='name' value={login.name} onChange={(e)=>handlechange2(e)}></input>
-                        <br></br>
-                        <label>Password</label>
 
-                        <input type='password' value={login.password} onChange={(e)=>handlechange2(e)} name='password'></input>
-                        <br></br>
-                        <button type='submit' className='btn2'> login</button>
-                        <p>Or</p>
-                        <button className='signup' onClick={signup2}>Signup</button>
+                    <form className='login' onSubmit={submitContent3}>
+                       
                         
+                        <input type='text' name='name' value={login.name} placeholder='Name' onChange={(e) => handlechange2(e)}></input>
+                        <br></br>
+                        
+
+                        <input type='password' value={login.password} placeholder='Password' onChange={(e) => handlechange2(e)} name='password'></input>
+                        <br></br>
+                        <button type='submit' className='btn2'>Sign-in</button>
+                        <p>Or</p>
+                        <button className='btn2' onClick={signup2}>Signup</button>
+
                     </form>
-                    
+                    <button className='btn4 close' onClick={closeModer}></button>
                 </section>
             </Modal>
             <section className='phase'>
-                <h1>Done your work in few Easy Steps</h1>
+                <h1>Few Easy Steps</h1>
                 <ul>
                     <li>
                         <img src='images/submit.png'></img>
-                        <p>1.Upload Your Work</p>
+                        <p>1.Fill Application Form</p>
                     </li>
                     <li>
                         <img src='images/done.png'></img>
-                        <p>2.Verify By Team & show on website</p>
+                        <p>2.Verification Process</p>
                     </li>
                     <li>
                         <img src='images/recruitment.png'></img>
@@ -258,7 +257,7 @@ function Mainpage() {
                     </li>
                     <li>
                         <img src='./images/agreement.png'></img>
-                        <p>4.Legal Work</p>
+                        <p>4.Documentation</p>
                     </li>
                 </ul>
             </section>
@@ -268,39 +267,39 @@ function Mainpage() {
                 </div>
                 <div className='Right'>
                     <p>
-                        "At Tenderdedo, we revolutionize the way projects are tendered and contracted.
+                        "At TenderDekho, we revolutionize the way projects are tendered and contracted.
                         Our advanced ATS (Applicant Tracking System) platform seamlessly connects project owners with top-tier contractors,
                         simplifying the entire process from tender submission to contractor selection.
-                        With a focus on efficiency, transparency, and legal compliance, Tenderdedo ensures that every project is matched with the best-suited contractor,
-                        supported by robust legal agreements. Say goodbye to the complexities of project procurement and hello to streamlined success with Tenderdedo."
+                        With a focus on efficiency, transparency, and legal compliance, TenderDekho ensures that every project is matched with the best-suited contractor,
+                        supported by robust legal agreements. Say goodbye to the complexities of project procurement and hello to streamlined success with TenderDekho."
                     </p>
                     <button className='btn btn3' onClick={openModal}>Get Started</button>
                 </div>
             </section>
             <section className='facility'>
-                <h1>Why you choose us??</h1>
+                <h1>Why Choose us ?</h1>
                 <div className='container'>
                     <div className='card'>
                         <img src='./images/on-time.png'></img>
-                        <p>Get your work on time</p>
+                        <p>work on time</p>
                     </div>
                     <div className='card'>
                         <img src='./images/budget.png'></img>
-                        <p>Very minimal fess</p>
+                        <p>Reasonable fess</p>
                     </div>
                     <div className='card'>
                         <img src='images/quality.png'></img>
-                        <p>We Quality Assurance</p>
+                        <p>Quality Assurance</p>
                     </div>
                     <div className='card'>
                         <img src='./images/compliance.png'></img>
-                        <p>We provide legal assistance</p>
+                        <p>Documentation Assistance</p>
                     </div>
                 </div>
             </section>
             <section className='fourth'>
                 <div className='noti'>
-                    <h1>Dear, Contractors Get Notified when tender is uploaded</h1>
+                    <h1>Contractors Get Notification for new Tender</h1>
                     <br></br>
                     <form onSubmit={Subcribe}>
                         <input type='email' placeholder='Enter your email' required></input>
@@ -310,11 +309,11 @@ function Mainpage() {
             </section>
             <section >
                 <h1 className='hello'>What our client Say..?</h1>
-                <Review/>
+                <Review />
             </section>
             <section className='foots'>
-                <Footer/></section>
-               </>
+                <Footer /></section>
+        </>
     )
 }
 

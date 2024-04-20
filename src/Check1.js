@@ -58,6 +58,7 @@ function Check1() {
       try {
         const res = await tenderapi.getTenderbyid(id);
         setdata(res.data);
+        console.log(res.data);
       } catch (error) {
         console.log(error);
       }
@@ -197,7 +198,7 @@ function Check1() {
             <tr>
               <td>Work File</td>
               <td>
-                {data.filepath && <a href={data.filepath.substring(3)} target="_blank">see file</a>}
+                {data.filepath && <a href={data.filepath.substring(65)} target="_blank" download >see file</a>}
               </td>
             </tr>
           </tbody>
@@ -243,7 +244,7 @@ function Check1() {
                 <td>{e.experience}</td>
                 <td>
                   {e.filepath && (
-                    <a href={e.filepath.substring(3)} target="_blank">
+                    <a href={e.filepath.substring(65)} target="_blank">
                       See File
                     </a>
                   )}

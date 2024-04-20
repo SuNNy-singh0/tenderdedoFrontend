@@ -28,20 +28,20 @@ function Review() {
     );
   }
   const data = [
-    {name:'isha thapar',
-    image:`/images/1.jpeg`,
+    {name:'kanika sharma',
+    image:`/images/16.jpg`,
      rd:' my work is done on time and i satisfied with work' 
   },
-  {name:'Arjun kapoor',
-  image:`/images/3.jpeg`,
+  {name:'Arjun malik',
+  image:`/images/15.jpg`,
   rd:'I got my Contractor in Just 3 days and Contractor is highly skilled' 
 },
-{name:'Divam gupta',
-image:`/images/7.jpeg`,
+{name:'Divam saini',
+image:`/images/12.jpg`,
 rd:'This platform give best person for my maintainence in home' 
 },
-{name:'albert',
-image:`/images/8.jpeg`,
+{name:'Sahil Singla',
+image:`/images/13.jpg`,
 rd:'this platform is skilled person for glass work in firm' 
 }
   ]

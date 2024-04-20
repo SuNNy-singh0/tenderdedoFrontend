@@ -101,7 +101,7 @@ function Legalcheck() {
           });
           console.log(backup);
           await tenderapi.createbackup(backup)
-          
+          alert("backup created sucessfully");
         } catch (error) {
           alert(error);
         }
@@ -181,7 +181,7 @@ function Legalcheck() {
           <tr>
             <td>Work File</td>
             <td>
-    {data.filepath && <a href={data.filepath.substring(3)} target="_blank">see file</a>}
+    {data.filepath && <a href={data.filepath.substring(65)} target="_blank">see file</a>}
   </td>
           </tr>
         </tbody>
@@ -224,7 +224,7 @@ function Legalcheck() {
                 <td>{e.gstno}</td>
                 <td>{e.experience}</td>
                 <td>
-  {e.filepath && <a href={e.filepath.substring(3)} target="_blank">Download file</a>}
+  {e.filepath && <a href={e.filepath.substring(65)} target="_blank">Download file</a>}
 </td>
               
                 <td><button onClick={()=>reject(e.contractorid,e.emailid,e.tenderid)}>createbackup</button></td>

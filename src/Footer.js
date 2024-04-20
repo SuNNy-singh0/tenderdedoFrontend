@@ -5,13 +5,13 @@ function Footer() {
     <>
     <section className='foot'>
       <div className='logo'>
-        <img  src='images/Annotation_2024-02-09_170909-removebg-preview.png'></img>
+        <img  src='images/logo4.png'></img>
       </div>
       <div className='contact'>
        <h3>Contact : 7827734990,943857220</h3>
-       <h4>Address:Olympus A, Hiranandani Estate,
-         Ghodbunder Road, Patlipada, Thane West -
-          400607, Maharashtra</h4>
+       <h4>Address : Olympus A, mohan Estate,
+         Ghodbunder Road, Patliputra, Thane East -
+          400608, Maharashtra</h4>
       </div>
       <div className='condition'>
         <ul>

@@ -8,6 +8,7 @@ function WorkVerifier() {
       try {
         const res = await tenderapi.getTender();
         setdata(res.data);
+        console.log(res.data);
       } catch (error) {
         console.log(error);
       }
@@ -27,7 +28,7 @@ function WorkVerifier() {
       Should you have any questions or require further assistance regarding the upload process or any other matter, please feel free to reach out to us. We are here to support you every step of the way.
       Once again, congratulations on the acceptance of your work upload request`
       tenderapi.send(emailid,body)
-      alert("Your tender forwarded successfully");
+      alert("Your tender Listed SucessFully");
     } catch (error) {
       console.error('Error creating tender:', error);
     }
@@ -80,7 +81,13 @@ function WorkVerifier() {
                 <td>{e.duration}</td>
                 <td>{e.emailid}</td>
                 <td>{e.location}</td>
-                <td>  <a href={e.filepath} target="_blank" rel="noopener noreferrer">Open PDF</a></td>
+                <td>
+  {e.file && (
+    <a href={e.file.substring(65)} target="_blank" rel="noopener noreferrer">
+      See File
+    </a>
+  )}
+</td>
                 <td><button onClick={()=>reject(e.id,e.emailid)}>Reject</button></td>
                 <td><button onClick={()=>Forward(e.id,e.emailid)}>Forward</button></td>
               </tr>

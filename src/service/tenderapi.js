@@ -1,5 +1,5 @@
 import axios from "axios";
-const base = "https://tenderdedobackend-production.up.railway.app"
+const base = "http://localhost:8080"
 
 class tenderapi {
   createuser(content){
